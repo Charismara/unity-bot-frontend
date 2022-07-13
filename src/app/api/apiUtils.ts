@@ -10,7 +10,7 @@ const request = (options: any) => {
         headers.append("Authorization", "Bearer " + localStorage.getItem(environment.accessToken));
     }
 
-    const defaults = { headers: headers };
+    const defaults = {headers: headers};
     options = Object.assign({}, defaults, options);
 
     return fetch(options.url, options).then(response =>
