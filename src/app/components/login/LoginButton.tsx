@@ -1,12 +1,10 @@
 import {Col, Row} from "antd";
 import {Trans} from "react-i18next";
 import {DiscordLogo} from "../svg/DiscordLogo";
-import {useNavigate} from "react-router-dom";
 import {environment} from "../../environment";
 
 
 export function LoginButton() {
-    const navigate = useNavigate();
 
     return (
         <Row style={{paddingTop: "1rem"}}>

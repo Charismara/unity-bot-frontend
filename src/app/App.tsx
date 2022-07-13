@@ -1,37 +1,29 @@
 import React from 'react';
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Col, Layout, Menu, Row} from 'antd';
 import OAuth2RedirectHandler from "./user/oauth2/OAuth2RedirectHandler";
 import {Content, Footer, Header} from "antd/es/layout/layout";
 import {Profile} from "./user/profile/Profile";
-import {useGetProfileQuery} from "./reducer/backendApi";
-import {UnityBotLogo} from "./components/svg/UnityBotLogo";
 import {Home} from "./pages/home";
-import {LoginButton} from "./components/login/LoginButton";
 import {LogoutRedirect} from "./components/login/LogoutRedirect";
+import {ProfileComponent} from "./components/login/ProfileComponent";
+import {UnityLogoWithName} from "./components/misc/UnityLogoWithName";
 
 
 function App() {
-    const profile = useGetProfileQuery({});
-
     return (
         <BrowserRouter>
             <Layout style={{"minHeight": "100vh"}}>
                 <Header>
                     <Row>
                         <Col>
-                            <Row>
-                                <UnityBotLogo style={{"width": "3rem", "height": "3rem", "marginTop": "0.5rem"}}/>
-                                <span style={{gridColumn: "2", gridRow: "1", color: "#fff", fontSize: "3rem",}}>Unity Bot</span>
-                            </Row>
+                            <UnityLogoWithName/>
                         </Col>
                         <Col flex={1}>
                             <Menu></Menu>
                         </Col>
                         <Col>
-                            {profile.isSuccess ? <Link to={"logout"}>
-                                <div>{profile.data.name}</div>
-                            </Link> : <LoginButton/>}
+                            <ProfileComponent/>
                         </Col>
                     </Row>
                 </Header>

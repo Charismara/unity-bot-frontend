@@ -1,4 +1,5 @@
 {
   "login.with.discord": "Mit Discord Einloggen",
-  "random.generator": "Zufallsgenerator"
+  "random.generator": "Zufallsgenerator",
+  "logout": "Ausloggen"
 }
