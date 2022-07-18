@@ -1,5 +1,22 @@
 {
   "login.with.discord": "Login with Discord",
   "random.generator": "Random Generator",
-  "logout": "Log Out"
+  "logout": "Log Out",
+  "home.features": "Active Features",
+  "home.features.experimental": "Work in Progress",
+  "home.features.planned": "Coming Soon",
+  "features.reaction.roles": "Reaction Roles",
+  "features.embedded.messages": "Embedded Messages",
+  "features.statistics": "Statistics",
+  "admin.management.users": "User Management",
+  "admin.management.users.title": "Overview",
+  "admin.management.users.amount": "Registered Users: {{amount}}",
+  "admin.management.users.select": "Selected User",
+  "my.discord.bots": "My Discord Bots",
+  "admin.discord.bots": "Discord Bot Management",
+  "discord.bot.token": "Discord Bot Token",
+  "discord.bot.running": "Status",
+  "discord.bot.actions": "Actions",
+  "discord.bot.online": "Online",
+  "discord.bot.offline": "Offline"
 }

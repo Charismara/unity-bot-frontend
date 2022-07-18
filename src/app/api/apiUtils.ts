@@ -1,4 +1,5 @@
 import {environment} from "../environment";
+import {IProfile} from "../reducer/backendApiModels";
 
 
 const request = (options: any) => {
@@ -32,4 +33,8 @@ export function getCurrentUser() {
         url: environment.apiEndpoint + "/profile",
         method: "GET"
     });
+}
+
+export function hasPermission(permission: string, profile: IProfile): boolean {
+    return profile.roles.flatMap(role => role.privileges).find(privilege => privilege.name === permission) !== undefined;
 }

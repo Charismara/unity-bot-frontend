@@ -9,6 +9,19 @@
 @card-head-color: @text-color;
 @card-head-extra-color: @text-color;
 @text-color-secondary: #e1e1e1;
+@label-color: @text-color;
+@select-item-selected-color: @card-background;
+@desktop-wide: ~"only screen and (min-width: 1980px)";
+@desktop: ~"only screen and (min-width: 960px) and (max-width: 1979px)";
+@tablet: ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@table-bg: @layout-body-background;
+@table-header-bg: @card-background;
+@table-header-color: @text-color;
+@table-footer-bg: @card-background;
+@table-footer-color: @text-color;
+@item-active-bg: @card-background;
+@item-hover-bg: @card-background;
+@table-body-sort-bg: @card-background;
 
 body {
   margin: 0;
@@ -86,4 +99,47 @@ code {
 
 .login-button:hover {
   background-color: #839efa;
+}
+
+@media @desktop {
+  .content-container {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media @desktop-wide {
+  .content-container {
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+}
+
+@media @tablet {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.fontTitle {
+  font-size: 2.5rem;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: @card-background;
+}
+
+.ant-select-dropdown {
+  background-color: @card-background;
+}
+
+.ant-select-arrow {
+  color: @text-color;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+  background-color: @layout-body-color;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td, .ant-table-tbody > tr > td.ant-table-cell-row-hover{
+  background-color: @card-background;
 }

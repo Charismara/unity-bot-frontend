@@ -5,5 +5,5 @@ interface Properties {
 }
 
 export function LoadingSpinner(properties: Properties) {
-    return <div className={"loader"}/>
+    return <div className={"loader"} style={properties.style}/>
 }

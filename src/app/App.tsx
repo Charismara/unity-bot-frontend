@@ -8,7 +8,8 @@ import {Home} from "./pages/home";
 import {LogoutRedirect} from "./components/login/LogoutRedirect";
 import {ProfileComponent} from "./components/login/ProfileComponent";
 import {UnityLogoWithName} from "./components/misc/UnityLogoWithName";
-
+import {UserManagement} from "./pages/UserManagement";
+import {DiscordBotManagement} from "./pages/DiscordBotManagement";
 
 function App() {
     return (
@@ -27,12 +28,15 @@ function App() {
                         </Col>
                     </Row>
                 </Header>
-                <Content>
+                <Content className={"content-container"}>
                     <Routes>
                         <Route path={"/"} key={"Home"} element={<Home/>}/>
                         <Route path={"/oauth2/redirect"} element={<OAuth2RedirectHandler/>}/>
                         <Route path={"/profile"} element={<Profile/>}/>
                         <Route path={"/logout"} element={<LogoutRedirect/>}/>
+                        {/*<Route path={"/discord/bots"} element={}/>*/}
+                        <Route path={"/admin/users"} element={<UserManagement/>}/>
+                        <Route path={"/admin/discord/bots"} element={<DiscordBotManagement adminMode={true}/>}/>
                     </Routes>
                 </Content>
                 <Footer>

@@ -10,7 +10,7 @@ export function OAuth2RedirectHandler() {
         if (params.has('error')) {
             console.log("Login Error:", params.get('error'));
         }
-        return <Navigate to={"home"}/>
+        return <Navigate to={"/home"}/>
     }
 }
 

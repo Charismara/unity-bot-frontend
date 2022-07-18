@@ -1,7 +1,7 @@
 import {useGetProfileQuery} from "../../reducer/backendApi";
 
 export function Profile() {
-    const profile = useGetProfileQuery({});
+    const profile = useGetProfileQuery();
 
     if (!profile.isSuccess) {
         console.log("State: ", profile);
