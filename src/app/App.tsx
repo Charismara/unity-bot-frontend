@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 import {Col, Layout, Menu, Row} from 'antd';
 import OAuth2RedirectHandler from "./user/oauth2/OAuth2RedirectHandler";
 import {Content, Footer, Header} from "antd/es/layout/layout";
@@ -13,7 +13,7 @@ import {DiscordBotManagement} from "./pages/DiscordBotManagement";
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Layout style={{"minHeight": "100vh"}}>
                 <Header>
                     <Row>
@@ -46,7 +46,7 @@ function App() {
                     </Row>
                 </Footer>
             </Layout>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
