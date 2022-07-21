@@ -1,15 +1,15 @@
-import {Navigate, useParams} from "react-router-dom";
+import {useSearchParams, Navigate} from "react-router-dom";
 import {environment} from "../../environment";
 
 export function OAuth2RedirectHandler() {
-    const {token, error} = useParams();
-    console.log(token);
-    if (token !== undefined) {
-        localStorage.setItem(environment.accessToken, token);
+    const [params, setParams] = useSearchParams();
+    console.log("OAuth2RedirectHandler Params:", params.values());
+    if (params.has("token")) {
+        localStorage.setItem(environment.accessToken, params.get('token')!)
         return <Navigate to={"/profile"}/>
     } else {
-        if (error !== undefined) {
-            console.log("Login Error:", error);
+        if (params.has('error')) {
+            console.log("Login Error:", params.get('error'));
         }
         return <Navigate to={"/home"}/>
     }
