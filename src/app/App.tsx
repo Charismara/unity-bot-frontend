@@ -13,7 +13,7 @@ import {DiscordBotManagement} from "./pages/DiscordBotManagement";
 
 function App() {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
             <Layout style={{"minHeight": "100vh"}}>
                 <Header>
                     <Row>
