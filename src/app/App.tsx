@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import {Col, Layout, Menu, Row} from 'antd';
 import OAuth2RedirectHandler from "./user/oauth2/OAuth2RedirectHandler";
 import {Content, Footer, Header} from "antd/es/layout/layout";
@@ -13,40 +13,39 @@ import {DiscordBotManagement} from "./pages/DiscordBotManagement";
 
 function App() {
     return (
-        <HashRouter>
-            <Layout style={{"minHeight": "100vh"}}>
-                <Header>
-                    <Row>
-                        <Col>
-                            <UnityLogoWithName/>
-                        </Col>
-                        <Col flex={1}>
-                            <Menu></Menu>
-                        </Col>
-                        <Col>
-                            <ProfileComponent/>
-                        </Col>
-                    </Row>
-                </Header>
-                <Content className={"content-container"}>
-                    <Routes>
-                        <Route path={"/"} key={"Home"} element={<Home/>}/>
-                        <Route path={"/oauth2/redirect"} element={<OAuth2RedirectHandler/>}/>
-                        <Route path={"/profile"} element={<Profile/>}/>
-                        <Route path={"/logout"} element={<LogoutRedirect/>}/>
-                        {/*<Route path={"/discord/bots"} element={}/>*/}
-                        <Route path={"/admin/users"} element={<UserManagement/>}/>
-                        <Route path={"/admin/discord/bots"} element={<DiscordBotManagement adminMode={true}/>}/>
-                    </Routes>
-                </Content>
-                <Footer>
-                    <Row align={"middle"} style={{width: "100%"}} justify={"center"}>
-                        <div style={{color: "white"}}>Unity Bot ©{new Date().getFullYear()} Created by BlutmondGilde
-                        </div>
-                    </Row>
-                </Footer>
-            </Layout>
-        </HashRouter>
+        <Layout style={{"minHeight": "100vh"}}>
+            <Header>
+                <Row>
+                    <Col>
+                        <UnityLogoWithName/>
+                    </Col>
+                    <Col flex={1}>
+                        <Menu></Menu>
+                    </Col>
+                    <Col>
+                        <ProfileComponent/>
+                    </Col>
+                </Row>
+            </Header>
+            <Content className={"content-container"}>
+                <Routes>
+                    <Route path={"/"} key={"Home"} element={<Home/>}/>
+                    <Route path={"/home"} key={"Home"} element={<Home/>}/>
+                    <Route path={"/oauth2/redirect"} element={<OAuth2RedirectHandler/>}/>
+                    <Route path={"/profile"} element={<Profile/>}/>
+                    <Route path={"/logout"} element={<LogoutRedirect/>}/>
+                    {/*<Route path={"/discord/bots"} element={}/>*/}
+                    <Route path={"/admin/users"} element={<UserManagement/>}/>
+                    <Route path={"/admin/discord/bots"} element={<DiscordBotManagement adminMode={true}/>}/>
+                </Routes>
+            </Content>
+            <Footer>
+                <Row align={"middle"} style={{width: "100%"}} justify={"center"}>
+                    <div style={{color: "white"}}>Unity Bot ©{new Date().getFullYear()} Created by BlutmondGilde
+                    </div>
+                </Row>
+            </Footer>
+        </Layout>
     );
 }
 

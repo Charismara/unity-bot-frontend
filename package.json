@@ -2,6 +2,7 @@
   "name": "unity-bot-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://unity.blutmondgilde.de",
   "dependencies": {
     "@ant-design/charts": "^1.3.6",
     "@ant-design/icons": "^4.7.0",

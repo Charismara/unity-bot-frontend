@@ -10,6 +10,7 @@ import {initReactI18next} from "react-i18next";
 import translationsEn from './translation/en.json'
 import translationsDe from './translation/de.json'
 import LanguageDetector from 'i18next-browser-languagedetector';
+import {BrowserRouter} from "react-router-dom";
 
 i18n.use(initReactI18next)
     .use(LanguageDetector)
@@ -30,11 +31,13 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    </React.StrictMode>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <React.StrictMode>
+            <Provider store={store}>
+                <App/>
+            </Provider>
+        </React.StrictMode>
+    </BrowserRouter>
 );
 
 serviceWorker.unregister();
