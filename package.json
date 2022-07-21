@@ -19,6 +19,7 @@
     "antd": "^4.21.6",
     "axios": "^0.27.2",
     "craco-less": "^2.0.0",
+    "gh-pages": "^4.0.0",
     "i18next": "^21.8.13",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
@@ -36,7 +37,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

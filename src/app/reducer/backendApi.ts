@@ -1,7 +1,7 @@
 import {createApi} from '@reduxjs/toolkit/query/react'
 import {generatePath} from 'react-router-dom';
 import {backendBaseQuery} from "../api/baseQuery";
-import {IDiscordBot, IProfile, IRole} from "./backendApiModels";
+import {IDiscordBot, IDiscordGuild, IProfile, IRole} from "./backendApiModels";
 
 export const api = createApi({
     reducerPath: 'backend',
@@ -28,7 +28,7 @@ export const api = createApi({
             query: arg => ({url: generatePath('/discord/bot/:id', {id: arg.id.toString()}), method: 'get'}),
             providesTags: ["IDiscordBot"]
         }),
-        createDiscordBot: builder.mutation<IDiscordBot, { data: {token: string} }>({
+        createDiscordBot: builder.mutation<IDiscordBot, { data: { token: string, name: string } }>({
             query: arg => ({url: generatePath('/discord/bot/create'), method: 'post', data: arg.data}),
             invalidatesTags: ["IDiscordBotAdmin", "IDiscordBot"]
         }),
@@ -70,6 +70,10 @@ export const api = createApi({
             }),
             invalidatesTags: ["IDiscordBotAdmin", "IDiscordBot"]
         }),
+
+        getUserGuilds: builder.query<IDiscordGuild[], void>({
+            query: arg => ({url: generatePath('/discord/user/guilds'), method: 'get'})
+        }),
     })
 })
 
@@ -87,7 +91,9 @@ export const {
 
     useDeleteDiscordBotAdminMutation,
     useGetDiscordBotAdminQuery,
-    useGetDiscordBotsAdminQuery
+    useGetDiscordBotsAdminQuery,
+
+    useGetUserGuildsQuery,
 } = api;
 
 

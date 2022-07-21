@@ -23,5 +23,16 @@ export interface IProfile {
 export interface IDiscordBot {
     id: number,
     token: string,
+    name: string,
+    applicationId: string,
     running: boolean
+}
+
+export interface IDiscordGuild {
+    id: string,
+    name: string,
+    icon: string,
+    permission: string,
+    owner: boolean,
+    features: string[]
 }

@@ -3,7 +3,7 @@ import {BaseQueryFn} from '@reduxjs/toolkit/query/react';
 import {backendClient} from "./clients";
 import {environment} from "../environment";
 
-const axiosBaseQuery = (
+export const backendBaseQuery = (
     {baseUrl}: { baseUrl: string } = {baseUrl: ''}
 ): BaseQueryFn<{
     url: string
@@ -37,5 +37,3 @@ const axiosBaseQuery = (
             }
         }
     };
-
-export const backendBaseQuery = axiosBaseQuery;

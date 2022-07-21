@@ -18,5 +18,7 @@
   "discord.bot.running": "Status",
   "discord.bot.actions": "Actions",
   "discord.bot.online": "Online",
-  "discord.bot.offline": "Offline"
+  "discord.bot.offline": "Offline",
+  "discord.bot.name": "Bot Name",
+  "discord.bot.invite.title": "Invite {{name}}"
 }
