@@ -13,6 +13,7 @@
   "admin.management.users.amount": "Registered Users: {{amount}}",
   "admin.management.users.select": "Selected User",
   "my.discord.bots": "My Discord Bots",
+  "my.discord.servers": "My Discord Servers",
   "admin.discord.bots": "Discord Bot Management",
   "discord.bot.token": "Discord Bot Token",
   "discord.bot.running": "Status",
@@ -20,5 +21,7 @@
   "discord.bot.online": "Online",
   "discord.bot.offline": "Offline",
   "discord.bot.name": "Bot Name",
-  "discord.bot.invite.title": "Invite {{name}}"
+  "discord.bot.invite.title": "Invite {{name}}",
+  "dnd.history": "Dungeons & Dragons - History",
+  "dnd.history.desc": "Basically a way to store information in 'Sessions'.<br/><br/>Click for more Information."
 }
