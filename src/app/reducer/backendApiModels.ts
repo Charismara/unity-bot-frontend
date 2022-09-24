@@ -1,4 +1,4 @@
-export interface IPrivilege{
+export interface IPrivilege {
     id: number,
     name: string
 }
@@ -6,7 +6,7 @@ export interface IPrivilege{
 export interface IRole {
     id: number,
     name: string,
-    privileges:IPrivilege[]
+    privileges: IPrivilege[]
 }
 
 export interface IProfile {
@@ -32,7 +32,31 @@ export interface IDiscordGuild {
     id: string,
     name: string,
     icon: string,
-    permission: string,
-    owner: boolean,
+    permissions?: string,
+    owner?: boolean,
     features: string[]
+}
+
+export interface IFullDiscordGuild extends IDiscordGuild {
+    splash?: string,
+    discovery_splash?: string,
+    owner_id: string,
+    region?: string,
+    afk_channel_id?: string,
+    afk_timeout: number,
+    widget_enabled?: boolean,
+    widget_channel_id?: string,
+    verification_level: number,
+    default_message_notifications: number,
+    explicit_content_filter: number,
+    roles: unknown[],
+    emojis: unknown[],
+    mfa_level: number,
+    application_id?: string,
+    system_channel_id?: string,
+    system_channel_flags: number,
+    rules_channel_id?: string,
+    max_presence?: number,
+    approximate_presence_count?: number
+    approximate_member_count?: number
 }

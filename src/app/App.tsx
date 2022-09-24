@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {Col, Layout, Menu, Row} from 'antd';
 import OAuth2RedirectHandler from "./user/oauth2/OAuth2RedirectHandler";
 import {Content, Footer, Header} from "antd/es/layout/layout";
@@ -9,7 +9,8 @@ import {LogoutRedirect} from "./components/login/LogoutRedirect";
 import {ProfileComponent} from "./components/login/ProfileComponent";
 import {UnityLogoWithName} from "./components/misc/UnityLogoWithName";
 import {UserManagement} from "./pages/UserManagement";
-import {DiscordBotManagement} from "./pages/DiscordBotManagement";
+import {DiscordBotManagement} from "./pages/discordBotManagement";
+import {MyServers} from "./pages/myServers";
 
 function App() {
     return (
@@ -34,7 +35,7 @@ function App() {
                     <Route path={"/oauth2/redirect"} element={<OAuth2RedirectHandler/>}/>
                     <Route path={"/profile"} element={<Profile/>}/>
                     <Route path={"/logout"} element={<LogoutRedirect/>}/>
-                    {/*<Route path={"/discord/bots"} element={}/>*/}
+                    <Route path={"/discord/servers"} element={<MyServers/>}/>
                     <Route path={"/admin/users"} element={<UserManagement/>}/>
                     <Route path={"/admin/discord/bots"} element={<DiscordBotManagement adminMode={true}/>}/>
                 </Routes>

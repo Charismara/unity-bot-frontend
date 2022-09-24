@@ -3,7 +3,7 @@ import {
     useGetDiscordBotsAdminQuery, useGetUserGuildsQuery,
     useStartDiscordBotMutation, useStopDiscordBotMutation
 } from "../reducer/backendApi";
-import {Button, Card, Form, Input, Modal, Row, Space, Table} from "antd";
+import {Button, Card, Col, Form, Input, Modal, Row, Space, Table} from "antd";
 import {Trans} from "react-i18next";
 import {IDiscordBot} from "../reducer/backendApiModels";
 import {ColumnType} from "antd/es/table";
@@ -61,14 +61,14 @@ export function DiscordBotManagement(properties: Properties) {
             sorter: false,
             render: (bot: IDiscordBot) => (
                 <Space>
-                    <Button disabled={bot.running} onClick={event => startBot({data: bot})}>Start</Button>
-                    <Button disabled={!bot.running} onClick={event => stopBot({data: bot})}>Stop</Button>
-                    <Button onClick={event => deleteBot({data: bot})}>Delete</Button>
+                    <Button disabled={bot.running} onClick={event => startBot({data: bot})} type={"ghost"}>Start</Button>
+                    <Button disabled={!bot.running} onClick={event => stopBot({data: bot})} type={"ghost"}>Stop</Button>
+                    <Button onClick={event => deleteBot({data: bot})} type={"ghost"}>Delete</Button>
                     <Button onClick={event => {
                         const activeModals = [...openBotInviteModals];
                         activeModals.push(bot.id);
                         setOpenBotInviteModals(activeModals);
-                    }}>Invite Bot</Button>
+                    }} type={"ghost"}>Invite Bot</Button>
                     <Modal visible={openBotInviteModals.some(value => value === bot.id)}
                            title={<Trans i18nKey={"discord.bot.invite.title"} values={{name: bot.name}}/>}
                            onCancel={e => {
@@ -94,11 +94,16 @@ export function DiscordBotManagement(properties: Properties) {
             <Table dataSource={knownBots.data} loading={!knownBots.isSuccess && !userGuilds.isSuccess} columns={cols}
                    style={{width: "100%"}}
                    footer={data => (
-                       <div onClick={event => {
-                           setCreateBotModalShown(true);
-                       }}>
-                           <PlusCircleOutlined/>
-                       </div>
+                       <Row>
+                           <Col flex={1}/>
+                           <Col>
+                               <div onClick={event => {
+                                   setCreateBotModalShown(true);
+                               }}>
+                                   <PlusCircleOutlined className={"clickable-icon"} style={{fontSize:"1.5rem"}}/>
+                               </div>
+                           </Col>
+                       </Row>
                    )}/>
             <Modal visible={createBotModalShown}
                    onCancel={() => {

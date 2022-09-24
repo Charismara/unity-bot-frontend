@@ -8,7 +8,9 @@ export function Home() {
             <Card title={<Row style={{fontSize: "2.5rem", width: "100%"}} justify={"center"} align={"middle"}><Trans
                 i18nKey={"home.features"}/></Row>} bordered={false} style={{backgroundColor: "#36393e", width: "100%"}}>
                 <Row justify={"space-around"}>
-                    <span>None...</span>
+                    <Card bordered={false} style={{width: 280, margin: "5px"}} hoverable={true}>
+                        <Meta title={<Trans i18nKey={"dnd.history"}/>} description={<Trans i18nKey="dnd.history.desc"/>}/>
+                    </Card>
                 </Row>
             </Card>
             <Card title={<Row style={{fontSize: "2.5rem", width: "100%"}} justify={"center"} align={"middle"}><Trans

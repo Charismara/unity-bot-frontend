@@ -30,7 +30,7 @@ export function ProfileComponent() {
     const items: ItemType[] = [
         {
             key: 'my-bots',
-            label: (<Link to={"/discord/bots"}><Trans i18nKey={"my.discord.bots"}/></Link>)
+            label: (<Link to={"/discord/servers"}><Trans i18nKey={"my.discord.servers"}/></Link>)
         }
     ];
 

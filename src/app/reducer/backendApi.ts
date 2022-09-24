@@ -1,7 +1,7 @@
 import {createApi} from '@reduxjs/toolkit/query/react'
 import {generatePath} from 'react-router-dom';
 import {backendBaseQuery} from "../api/baseQuery";
-import {IDiscordBot, IDiscordGuild, IProfile, IRole} from "./backendApiModels";
+import {IDiscordBot, IDiscordGuild, IFullDiscordGuild, IProfile, IRole} from "./backendApiModels";
 
 export const api = createApi({
     reducerPath: 'backend',
@@ -74,6 +74,9 @@ export const api = createApi({
         getUserGuilds: builder.query<IDiscordGuild[], void>({
             query: arg => ({url: generatePath('/discord/user/guilds'), method: 'get'})
         }),
+        getUserGuild: builder.query<IFullDiscordGuild, { guild_id: string }>({
+            query: arg => ({url: generatePath('/discord/user/guild/:guild_id', arg), method: 'get'})
+        }),
     })
 })
 
@@ -94,6 +97,7 @@ export const {
     useGetDiscordBotsAdminQuery,
 
     useGetUserGuildsQuery,
+    useGetUserGuildQuery,
 } = api;
 
 

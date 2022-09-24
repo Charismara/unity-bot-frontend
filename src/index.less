@@ -136,10 +136,38 @@ code {
   color: @text-color;
 }
 
-.ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   background-color: @layout-body-color;
 }
 
-.ant-table-tbody > tr.ant-table-row:hover > td, .ant-table-tbody > tr > td.ant-table-cell-row-hover{
+.ant-table-tbody > tr.ant-table-row:hover > td, .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background-color: @card-background;
+}
+
+.clickable-icon {
+  color: #c6c6c6;
+  transition: color 0.5s ease;
+}
+
+.clickable-icon:hover {
+  color: @text-color;
+  cursor: pointer;
+}
+
+.ant-btn-ghost[disabled], .ant-btn-ghost[disabled]:hover, .ant-btn-ghost[disabled]:focus, .ant-btn-ghost[disabled]:active{
+  background-color: transparent;
+  color: #adadad;
+  border-color: #adadad;
+}
+
+.ant-pagination-disabled .ant-pagination-item-link, .ant-pagination-disabled:hover .ant-pagination-item-link{
+  background-color: transparent;
+  color: #adadad;
+  border-color: #adadad;
+}
+
+.ant-pagination-item-active a{
+  color: @text-color;
+  border-color: @text-color;
   background-color: @card-background;
 }
